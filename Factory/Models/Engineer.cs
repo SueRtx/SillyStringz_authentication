@@ -1,17 +1,19 @@
-// using System.Collections.Generic;
-// using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
-// namespace Factory.Models
-// {
-//   public class Category
-//   {
-//     public Category()
-//     {
-//       this.JoinEntities = new HashSet<CategoryItem>();
-//     }
+namespace Factory.Models
+{
+  public class Engineer
+  {
+    public Engineer()
+    {
+      this.JoinEntities = new HashSet<EngineerMachine>();
+    }
 
-//     public string Name { get; set; }
-//     public int CategoryId { get; set; }
-//     public virtual ICollection<CategoryItem> JoinEntities { get; set; }    
-//   }
-// }
+    public string Name { get; set; }
+    public int EngineerId { get; set; }
+    public string DateHired { get; set; }
+
+    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }    
+  }
+}
