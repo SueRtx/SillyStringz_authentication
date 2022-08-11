@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @model ToDoList.Models.Category;
+
+<div class="container">
+  <h2>Category Details</h2>
+  <hr />
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <h4>This Category Does Not Contain Any Item!</h4>
+  }
+  else
+  {
+    <h4>Items the Category Contains:</h4>
+    <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Item.Description</li>
+    }
+    </ul>
+  }
+  <hr />
+  <h5 class="pageLink">@Html.ActionLink("Add Item", "Index", "Items")</h5>
+
+  <h5 class="pageLink">@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</h5>
+
+  <h5 class="pageLink">@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</h5>
+
+  <h5 class="pageLink">@Html.ActionLink("Category List", "Index")</h5>
+
+</div> *@

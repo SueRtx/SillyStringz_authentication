@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @model ToDoList.Models.Category
+
+<div class="container">
+  <h2>Edit</h2>
+
+  <h4>Edit this Category: @Html.DisplayFor(model => model.Name)</h4>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.CategoryId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name, new { required = "required" })
+
+    <input type="submit" value="Save" />
+  }
+
+  <h5 class="pageLink">@Html.ActionLink("Category List", "Index")</h5>
+</div> *@

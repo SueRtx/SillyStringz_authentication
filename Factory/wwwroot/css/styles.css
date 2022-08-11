@@ -1,0 +1,102 @@
+
+body {
+  text-align: center; 
+  background: rgb(196, 230, 239);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  margin-top: 2%;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #1292ab;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px black;
+}
+
+#list {
+  width: 30%;
+  border: none;
+  margin-top: 2%;
+  margin-left: 35%;
+  letter-spacing: 3px;
+  text-align: left;
+  color: #1292ab;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn {
+  
+  margin-right: 3%;
+  border: 2px solid #1292ab;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(246, 30, 109);
+  
+  width: 10%;
+  background-color: rgb(216, 236, 150);  
+}
+
+.btn2 {
+ 
+  margin-left: 15%;
+  border: 2px solid #1292ab;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(246, 30, 109);
+  
+  width: 10%;
+  background-color: rgb(216, 236, 150);  
+}
+
+
+.linkWordColor {
+  color: rgba(240, 12, 12, 0.505);
+  font-size: 20px;
+}
+
+.pageLink {
+  float: left;
+  margin-left: 15%;
+  width: 30%;
+  border: 2px solid #1292ab;
+  padding: 5px;
+  margin-top: 2%;
+  color: rgba(240, 12, 12, 0.505);
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(236, 224, 146); 
+  font-family: Arial;
+  border-radius: 30%;
+}
+
+.pageLink:hover {
+  background-color: #f2b885; 
+  color: white;
+}
+
+.pageLink2 {
+  float: right;
+  margin-right: 15%;
+  width: 30%;
+  border: 2px solid #1292ab;
+  padding: 5px;
+  margin-top: 2%;
+  color: rgba(240, 12, 12, 0.505);
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(236, 224, 146); 
+  font-family: Arial;
+  border-radius: 30%;
+}
+
+.pageLink2:hover {
+  background-color: #f2b885; 
+  color: white;
+}
+

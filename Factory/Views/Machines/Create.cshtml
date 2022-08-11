@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @model ToDoList.Models.Item
+
+<div class="container">
+  <h2>Add Item</h2>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description, new { required = "required" })
+  <br>
+  
+    @Html.Label("Select category")
+    @Html.DropDownList("CategoryId")
+  <br>
+    <input type="submit" value="Add Item" class="btn" />
+  } *@
+
+  <h5 class="pageLink">@Html.ActionLink("Show all items", "Index")</h5>
+</div>

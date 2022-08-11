@@ -1,0 +1,44 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @model ToDoList.Models.Item
+<div class="container">
+
+  <h2>Item Details</h2>
+  <hr />
+  <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+
+  <h5 class="pageLink">@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</h5>
+<h5 class="pageLink2">@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</h5>
+<br/>
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p>This Item does not belong to any Categories</p>
+  }
+  else
+  {
+    <hr />
+    <h4> Categories List for <strong>@Html.DisplayFor(model => model.Description)</strong></h4>
+
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Category.Name</li>
+
+      @using (Html.BeginForm("DeleteCategory", "Items"))
+      {
+        @Html.Hidden("joinId", @join.CategoryItemId)
+        <input type="submit" value="Delete"  class="btn" />
+      }
+    }
+    
+  }
+  <hr />
+  <h5 class="pageLink2">
+  @Html.ActionLink("Add more Category for this Item", "AddCategory")</h5> 
+  <h5 class="pageLink2">@Html.ActionLink("Item List", "Index")</h5> 
+</div> *@
+
+
+
+
