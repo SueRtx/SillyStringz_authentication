@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ToDoList.Migrations
+namespace Factory.Migrations
 {
     [DbContext(typeof(FactoryContext))]
-    [Migration("20220811164713_Initial")]
+    [Migration("20220811183821_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -10,17 +10,17 @@
   <h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
 
   @using (Html.BeginForm())
-  {
-    @Html.HiddenFor(model => model.EngineerId)
+{
+  @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name, new { required = "required" })
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name, new { required = "required" })
 
-    @Html.LabelFor(model => model.DateHired)
-    Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })
+  @Html.LabelFor(model => model.DateHired)
+  @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })
 
-    <input type="submit" value="Save" class="btn"/>
-  }
+  <input type="submit" value="Save" />
+}
 
   <h5 class="pageLink">@Html.ActionLink("Engineer List", "Index")</h5>
 </div>

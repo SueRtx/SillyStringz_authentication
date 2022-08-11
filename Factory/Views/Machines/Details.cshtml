@@ -35,7 +35,7 @@
   }
   <hr />
   <h5 class="pageLink2">
-  @Html.ActionLink("Add more Engineer for this Machine", "AddEngineer")</h5> 
+  @Html.ActionLink("Add more Engineer for this Machine", "AddEngineer", new { id = Model.MachineId })</h5> 
   <h5 class="pageLink2">@Html.ActionLink("Machine List", "Index")</h5> 
 </div>
 

@@ -17,12 +17,12 @@
   else
   {
     <h4>Machines the Engineer Contains:</h4>
-    <ul>
+    
     @foreach(var join in Model.JoinEntities)
     {
       <li>@join.Machine.Name</li>
     }
-    </ul>
+    
   }
   
   <h5 class="pageLink">@Html.ActionLink("Add Machine", "Index", "Machines")</h5>

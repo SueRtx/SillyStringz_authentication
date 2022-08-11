@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ToDoList.Migrations
+namespace Factory.Migrations
 {
     [DbContext(typeof(FactoryContext))]
     partial class FactoryContextModelSnapshot : ModelSnapshot

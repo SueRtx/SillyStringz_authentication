@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <OutputType>Exe</OutputType> <!-- // This is only needed if your project has a user interface. Read more below. -->
   </PropertyGroup>
 
   <ItemGroup>

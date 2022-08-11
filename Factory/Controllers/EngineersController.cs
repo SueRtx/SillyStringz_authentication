@@ -1,5 +1,11 @@
+// using Microsoft.EntityFrameworkCore;
+// using Microsoft.AspNetCore.Mvc.Rendering;
+// using Microsoft.AspNetCore.Mvc;
+// using Factory.Models;
+// using System.Collections.Generic;
+// using System.Linq;
+
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using Factory.Models;
 using System.Collections.Generic;
@@ -38,7 +44,7 @@ namespace Factory.Controllers
     public ActionResult Details(int id)
     {
       var thisEngineer = _db.Engineers
-          .Include(Eegineer => engineer.JoinEntities)
+          .Include(engineer => engineer.JoinEntities)
           .ThenInclude(join => join.Machine)
           .FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);

@@ -30,7 +30,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Create(Machine machine, int EngineerId)
     {
-      _db.Machines.Add(item);
+      _db.Machines.Add(machine);
       _db.SaveChanges();
       if (EngineerId != 0)
       {
@@ -44,7 +44,7 @@ namespace Factory.Controllers
     {
       var thisMachine = _db.Machines
           .Include(machine => machine.JoinEntities)
-          .ThenInclude(join => join.Eegineer)
+          .ThenInclude(join => join.Engineer)
           .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
@@ -80,7 +80,7 @@ namespace Factory.Controllers
     {
       if (EngineerId != 0)
       {
-        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = item.MachineId });
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
