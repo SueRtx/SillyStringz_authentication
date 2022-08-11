@@ -1,113 +1,113 @@
-// using Microsoft.AspNetCore.Mvc.Rendering;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.AspNetCore.Mvc;
-// using Factory.Models;
-// using System.Collections.Generic;
-// using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Factory.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-// namespace Factory.Controllers
-// {
-//   public class ItemsController : Controller
-//   {
-//     private readonly FactoryContext _db;
+namespace Factory.Controllers
+{
+  public class MachinesController : Controller
+  {
+    private readonly FactoryContext _db;
 
-//     public ItemsController(FactoryContext db)
-//     {
-//       _db = db;
-//     }
+    public MachinesController(FactoryContext db)
+    {
+      _db = db;
+    }
 
-//     public ActionResult Index()
-//     {
-//       return View(_db.Items.ToList());
-//     }
+    public ActionResult Index()
+    {
+      return View(_db.Machines.ToList());
+    }
 
-//     public ActionResult Create()
-//     {
-//       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-//       return View();
-//     }
+    public ActionResult Create()
+    {
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View();
+    }
 
-//     [HttpPost]
-//     public ActionResult Create(Item item, int CategoryId)
-//     {
-//       _db.Items.Add(item);
-//       _db.SaveChanges();
-//       if (CategoryId != 0)
-//       {
-//         _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
-//         _db.SaveChanges();
-//       }
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+    public ActionResult Create(Machine machine, int EngineerId)
+    {
+      _db.Machines.Add(item);
+      _db.SaveChanges();
+      if (EngineerId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult Details(int id)
-//     {
-//       var thisItem = _db.Items
-//           .Include(item => item.JoinEntities)
-//           .ThenInclude(join => join.Category)
-//           .FirstOrDefault(item => item.ItemId == id);
-//       return View(thisItem);
-//     }
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+          .Include(machine => machine.JoinEntities)
+          .ThenInclude(join => join.Eegineer)
+          .FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
 
-//     public ActionResult Edit(int id)
-//     {
-//       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-//       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-//       return View(thisItem);
-//     }
+    public ActionResult Edit(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
+    }
 
-//     [HttpPost]
-//     public ActionResult Edit(Item item, int CategoryId)
-//     {
-//       if (CategoryId != 0)
-//       {
-//         _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
-//       }
-//       _db.Entry(item).State = EntityState.Modified;
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+    public ActionResult Edit(Machine machine, int EngineerId)
+    {
+      if (EngineerId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      }
+      _db.Entry(machine).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult AddCategory(int id)
-//     {
-//       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-//       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-//       return View(thisItem);
-//     }
+    public ActionResult AddEngineer(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
+    }
 
-//     [HttpPost]
-//     public ActionResult AddCategory(Item item, int CategoryId)
-//     {
-//       if (CategoryId != 0)
-//       {
-//         _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
-//         _db.SaveChanges();
-//       }
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+    public ActionResult AddEngineer(Machine machine, int EngineerId)
+    {
+      if (EngineerId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = item.MachineId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult Delete(int id)
-//     {
-//       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-//       return View(thisItem);
-//     }
+    public ActionResult Delete(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
 
-//     [HttpPost, ActionName("Delete")]
-//     public ActionResult DeleteConfirmed(int id)
-//     {
-//       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-//       _db.Items.Remove(thisItem);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      _db.Machines.Remove(thisMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     [HttpPost]
-//     public ActionResult DeleteCategory(int joinId)
-//     {
-//       var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);
-//       _db.CategoryItem.Remove(joinEntry);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
-//   }
-// }
+    [HttpPost]
+    public ActionResult DeleteCategory(int joinId)
+    {
+      var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+  }
+}
