@@ -2,19 +2,19 @@
   Layout = "_Layout";
 }
 
-@* @model ToDoList.Models.Item
+@model Factory.Models.Machine
 
 <div class="container">
-  <h2>Edit Item</h2>
+  <h2>Edit Machine</h2>
   <hr>
-  <h4>Edit this task: @Html.DisplayFor(model => model.Description)</h4>
+  <h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
 
   @using (Html.BeginForm())
   {
-    @Html.HiddenFor(model => model.ItemId)
+    @Html.HiddenFor(model => model.MachineId)
 
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
     @Html.Label("Select category")
     @Html.DropDownList("CategoryId")
@@ -26,4 +26,4 @@
 </div>
 
 <h5 class="pageLink">@Html.ActionLink("Cancel", "Index")</h5>
-</div> *@
+</div>

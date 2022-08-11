@@ -2,23 +2,23 @@
   Layout = "_Layout";
 }
 
-@* @model ToDoList.Models.Item
+@model Factory.Models.Machine
 
 <div class="container">
-  <h2>Add Category</h2>
+  <h2>Add Engineer</h2>
   <hr />
-  <h4>Add a category to this task: @Html.DisplayFor(model => model.Description)</h4>
+  <h4>Add a Engineer to this task: @Html.DisplayFor(model => model.Name)</h4>
 
   @using (Html.BeginForm())
   {
-      @Html.HiddenFor(model => model.ItemId)
+      @Html.HiddenFor(model => model.MachineId)
 
-      @Html.Label("Select category ")
-      @Html.DropDownList("CategoryId")
+      @Html.Label("Select Engineer ")
+      @Html.DropDownList("EngineerId")
   <br />
       <input type="submit" value="Save" class="pageLink"/>
   }
 
   <h5 class="pageLink">@Html.ActionLink("Back to list", "Index")</h5>
 
-</div> *@
+</div>

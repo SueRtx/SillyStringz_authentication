@@ -2,32 +2,32 @@
   Layout = "_Layout";
 }
 
-@* @model ToDoList.Models.Item
+@model Factory.Models.Machine
 <div class="container">
 
-  <h2>Item Details</h2>
+  <h2>Machine Details</h2>
   <hr />
-  <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-  <h5 class="pageLink">@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</h5>
-<h5 class="pageLink2">@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</h5>
+  <h5 class="pageLink">@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</h5>
+<h5 class="pageLink2">@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</h5>
 <br/>
   @if(@Model.JoinEntities.Count == 0)
   {
-    <p>This Item does not belong to any Categories</p>
+    <p>This Machine does not belong to any Engineers</p>
   }
   else
   {
     <hr />
-    <h4> Categories List for <strong>@Html.DisplayFor(model => model.Description)</strong></h4>
+    <h4> Engineers List for <strong>@Html.DisplayFor(model => model.Name)</strong></h4>
 
     @foreach(var join in Model.JoinEntities)
     {
-      <li>@join.Category.Name</li>
+      <li>@join.Engineer.Name</li>
 
-      @using (Html.BeginForm("DeleteCategory", "Items"))
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
-        @Html.Hidden("joinId", @join.CategoryItemId)
+        @Html.Hidden("joinId", @join.EngineerMachineId)
         <input type="submit" value="Delete"  class="btn" />
       }
     }
@@ -35,9 +35,9 @@
   }
   <hr />
   <h5 class="pageLink2">
-  @Html.ActionLink("Add more Category for this Item", "AddCategory")</h5> 
-  <h5 class="pageLink2">@Html.ActionLink("Item List", "Index")</h5> 
-</div> *@
+  @Html.ActionLink("Add more Engineer for this Machine", "AddEngineer")</h5> 
+  <h5 class="pageLink2">@Html.ActionLink("Machine List", "Index")</h5> 
+</div>
 
 
 

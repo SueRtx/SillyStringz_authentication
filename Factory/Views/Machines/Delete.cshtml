@@ -2,16 +2,16 @@
   Layout = "_Layout";
 }
 
-@* @model ToDoList.Models.Item
+@model Factory.Models.Item
 
 <div class="container">
   <h2>Are you sure you want to delete this?</h2>
 
-  @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+  @Html.DisplayNameFor(model => modelName): @Html.DisplayFor(model => modelName)
   @using (Html.BeginForm())
   {
     <input type="submit" value="Delete" class="pageLink"/>
   }
 
   <h5 class="pageLink">@Html.ActionLink("Cancel", "Index")</h5>
-</div> *@
+</div>
