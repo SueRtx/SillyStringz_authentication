@@ -2,21 +2,24 @@
   Layout = "_Layout";
 }
 
-@* @model ToDoList.Models.Category
+@model Factory.Models.Engineer
 
 <div class="container">
-  <h2>Add Category</h2>
+  <h2>Add Engineer</h2>
 
   @using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name, new { required = "required" })
-  <r />
+ 
+    @Html.LabelFor(model => model.DateHired)
+    @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })
+
     <input type="submit" value="Add" class="btn" />
   }
-<hr />
-  <h5 class="pageLink">@Html.ActionLink("Category List", "Index")</h5>
+
+  <h5 class="pageLink">@Html.ActionLink("Engineer List", "Index")</h5>
  
   <h5 class="pageLink">@Html.ActionLink("Home", "Index", "Home")</h5>
 
-</div> *@
+</div>
