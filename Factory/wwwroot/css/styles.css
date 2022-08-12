@@ -1,7 +1,7 @@
 
 body {
   text-align: center; 
-  background: rgb(196, 230, 239);
+  background: rgb(1, 16, 20);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -60,8 +60,8 @@ h1 {
 
 .pageLink {
   float: left;
-  margin-left: 15%;
-  width: 30%;
+ margin-left: 14%;
+  width: 35%;
   border: 2px solid #1292ab;
   padding: 5px;
   margin-top: 2%;
@@ -80,9 +80,9 @@ h1 {
 }
 
 .pageLink2 {
-  float: right;
-  margin-right: 15%;
-  width: 30%;
+ float: right;
+  margin-right: 14%;
+  width: 35%;
   border: 2px solid #1292ab;
   padding: 5px;
   margin-top: 2%;
@@ -99,4 +99,18 @@ h1 {
   background-color: #f2b885; 
   color: white;
 }
+
+
+.row {
+  margin-left: 5%;
+  padding: 2%;
+  color: rgb(243, 81, 140);
+  border: 5px solid rgb(245, 46, 119); 
+  width:90%;
+  background-color: rgb(162, 232, 234); 
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
 

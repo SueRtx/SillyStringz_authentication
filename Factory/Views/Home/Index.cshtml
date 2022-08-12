@@ -1,10 +1,53 @@
 @{
   Layout = "_Layout";
 }
+<img src="~/image/machine.jpg">
+@* <img src="~/image/machine1.png">
+<img src="~/image/machine2.png">
+<img src="~/image/machine3.png">
+<img src="~/image/machine4.png"> *@
+
+@using Factory.Models
 
 <div class="container">
 
-  <h5 class="pageLink">@Html.ActionLink("Category List", "Index", "Engineers")</h5>
-  <h5 class="pageLink2">@Html.ActionLink("Add Category", "Create", "Engineers")</h5>
-  
+  <div class="col">
+    <h5 class="pageLink">@Html.ActionLink("Add Engineer", "Create", "Engineers")</h5>
+    <h5 class="pageLink2">@Html.ActionLink("Add Machine", "Create", "Machines")</h5>
+
+  <div class="row">
+    <div class="col">
+      @if (ViewBag.Engineers.Count == 0) //Engineers List
+      {
+        <h4>No Engineers yet!</h4>
+        @* <h5 class="pageLink">@Html.ActionLink(" AddEngineer", "Create", "Engineers")</h5> *@
+      }
+      else
+      {
+        <h4>Engineers List</h4>
+        @foreach (Engineer engineer in @ViewBag.Engineers)
+        {
+          <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
+        }
+      }
+    </div>
+
+    <div class="col">
+      
+
+      @if (ViewBag.Machines.Count == 0) //Machine List
+      {
+        <h4>No Machine yet!</h4>
+          @* <h5 class="pageLink2">@Html.ActionLink("Add Machine", "Create", "Machines")</h5> *@
+      }
+      else
+      {
+        <h4>Machine List</h4>
+        @foreach (Machine machine in ViewBag.Machines)
+        {
+          <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</li>
+        }
+      }
+    </div>
+  </div>
 </div>
