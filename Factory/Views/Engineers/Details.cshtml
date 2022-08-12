@@ -7,8 +7,8 @@
 <div class="container">
   <h2>Engineer Details</h2>
   <hr />
-  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-  <h3>@Html.DisplayNameFor(model => model.DateHired): @Html.DisplayFor(model => model.DateHired)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+  @Html.DisplayNameFor(model => model.DateHired): @Html.DisplayFor(model => model.DateHired)</h3>
 
   @if(@Model.JoinEntities.Count == 0)
   {
@@ -21,16 +21,25 @@
     @foreach(var join in Model.JoinEntities)
     {
       <li>@join.Machine.Name</li>
+
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete"  class="btn" />
+      }
     }
     
   }
   
-  <h5 class="pageLink">@Html.ActionLink("Add Machine", "Index", "Machines")</h5>
+  @* <h5 class="pageLink">@Html.ActionLink("Add Machine", "Index", "Machines")</h5> *@
 
   <h5 class="pageLink">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</h5>
 
   <h5 class="pageLink">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</h5>
 
-  <h5 class="pageLink">@Html.ActionLink("Engineer List", "Index")</h5>
+ <h5 class="pageLink">
+  @Html.ActionLink("Add more machine for this Engineer", "AddMachine", new { id = Model.EngineerId })</h5> 
+
+  <h5 class="pageLink">@Html.ActionLink("Home", "Index", "Home")</h5>
 
 </div>
