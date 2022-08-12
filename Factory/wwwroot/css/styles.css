@@ -1,17 +1,42 @@
 body {
   text-align: center; 
-  background: rgb(107, 205, 232);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: rgb(128, 132, 133);
+  font-family:Impact, 
+  Haettenschweiler, 'Arial Bold', sans-serif;
 }
 
-h1 {
-  margin-top: 2%;
+h1, h4, h6{
+  margin-top: 1%;
   letter-spacing: 3px;
   text-align: center;
-  color: #1292ab;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px black;
+  color: #4f0404;
+  
+  text-shadow: 2px 2px 2px rgb(180, 174, 174);
 }
+
+.wordLink {
+  color: #1a780a;
+  font-family:  Arial;
+}
+
+img {
+  margin-top: 1%;
+  margin-left: -1.7%;
+  width: 103.5%;
+  border: 2px solid #464545;
+}
+
+.col {
+  padding-left: 3%;
+  padding-right: 3%;
+  color: #4f0404;
+  border: 2px solid #464545; 
+  background-color: rgb(177, 180, 181); 
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
 
 #list {
   width: 30%;
@@ -49,61 +74,36 @@ h1 {
 }
 
 
-.linkWordColor {
-  color: rgba(240, 12, 12, 0.505);
-  font-size: 20px;
-}
-
 .pageLink {
+  color:  #1a780a;
+  font-size: 20px;
   float: left;
-  margin-left: 14%;
+  margin-left: 10%;
   width: 35%;
-  border: 2px solid #1292ab;
+  border: 2px solid #4f0404;
   padding: 5px;
-  margin-top: 2%;
-  color: rgba(240, 12, 12, 0.505);
+  margin-top: 1%;
   text-align: center;
   font-weight: bold;
-  font-size: 15px;
-  background-color: rgb(236, 224, 146); 
+  background-color: rgb(177, 180, 181); 
   font-family: Arial;
   border-radius: 30%;
 }
+
+
 
 .pageLink:hover {
-  background-color: #f2b885; 
-  color: white;
+  background-color:#1a780a; 
+  color: rgb(177, 180, 181);
 }
 
-.pageLink2 {
-  float: right;
-  margin-right: 14%;
-  width: 35%;
-  border: 2px solid #1292ab;
-  padding: 5px;
-  margin-top: 2%;
-  color: rgba(240, 12, 12, 0.505);
-  text-align: center;
-  font-weight: bold;
-  font-size: 15px;
-  background-color: rgb(236, 224, 146); 
-  font-family: Arial;
-  border-radius: 30%;
-}
+
 
 .pageLink2:hover {
   background-color: #f2b885; 
   color: white;
 }
 
-.row {
-  padding: 2%;
-  color: rgb(243, 81, 140);
-  border: 5px solid rgb(245, 46, 119); 
-  background-color: rgb(162, 232, 234); 
-  font-size: 25px;
-  font-weight: bold;
-}
 
 
 
