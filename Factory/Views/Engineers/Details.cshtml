@@ -17,34 +17,30 @@
 
   <h5>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId }, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId }, new {@class ="pageLink"})</h5>
-
-  
 </div>
+  <img class="image2" src="~/image/machine2.png">
 
-  <img class="image3" src="~/image/machine3.png"  class="image1" >
-
-<div class="detailBox">
-  <h5>@Html.ActionLink("Add machine for this Engineer", "AddMachine", new { id = Model.EngineerId }, new {@class ="pageLink2"})</h5> 
-  @if(@Model.JoinEntities.Count == 0)
-  {
-    <h3>Engineer Does Not Contain Any Machine!</h3>
-  }
-  else
-  {
-
-    <h3>Machines this Engineer  Licensed to Repair</h3>
-    
-    @foreach(var join in Model.JoinEntities)
+  <div class="detailBox">
+    <h5>@Html.ActionLink("Add machine for this Engineer", "AddMachine", new { id = Model.EngineerId }, new {@class ="pageLink2"})</h5> 
+    @if(@Model.JoinEntities.Count == 0)
     {
-      <li>@join.Machine.Name</li>
-
-      @using (Html.BeginForm("DeleteMachine", "Engineers"))
-      {
-        @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete"  class="btn2" />
-      }
+      <h4>Engineer Does Not Contain Any Machine!</h4>
     }
-  }
-</div>
- 
+    else
+    {
+      <h4>Machines this Engineer  Licensed to Repair</h4>
+      <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Machine.Name</li>
+        @using (Html.BeginForm("DeleteMachine", "Engineers"))
+        {
+          @Html.Hidden("joinId", @join.EngineerMachineId)
+          <input type="submit" value="Delete" class="btn3"/>
+        }  
+      }
+    
+      </ul>
+    }
+  </div>
 </div>

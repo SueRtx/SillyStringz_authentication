@@ -18,7 +18,7 @@
     } 
     else
     {
-      <h4>* Click on Machine to See Details *</h4>
+      <h4>Click on Machine to See Details</h4>
       @foreach (Machine machine in Model)
       {
         <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId }, new { @class="linkWordColor" })</li>

@@ -18,12 +18,12 @@
 <h5>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId}, new {@class ="pageLink"})</h5>
 </div>
 
-<img class="image3" src="~/image/machine3.png"  class="image1" >
+<img class="image2" src="~/image/machine2.png">
 <div class="detailBox">
   <h5>@Html.ActionLink("Add Engineer for this Machine", "AddEngineer", new { id = Model.MachineId }, new {@class ="pageLink2"})</h5> 
   @if(@Model.JoinEntities.Count == 0)
   {
-    <h3>Machine Does Not Belong to Any Engineers</h3>
+    <h4>No Engineer yet!</h4>
   }
   else
   {
@@ -36,15 +36,11 @@
       @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete"  class="btn" />
+        <input type="submit" value="Delete"  class="btn3" />
       }
     }
-    
   }
-
-  <h5>
-  
-</div> 
+  </div> 
 </div>
 
 

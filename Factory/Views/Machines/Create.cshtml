@@ -13,11 +13,11 @@
     @using (Html.BeginForm())
     {
       <h4>@Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name, new { required = "required" })
+      @Html.TextBoxFor(model => model.Name, new { required = "required" , @class ="wordLink" })
     
       @Html.Label("Select Engineer")
       @Html.DropDownList("EngineerId")</h4>
-    <br>
+    
       <input type="submit" value="Add Machine" class="btn" />
     }
   </div>

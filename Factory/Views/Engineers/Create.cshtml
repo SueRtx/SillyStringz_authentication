@@ -13,13 +13,13 @@
   <div class="infoBox">
     @using (Html.BeginForm())
     {
-      <h4>@Html.LabelFor(model => model.Name)
+      <h3>@Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, new { required = "required", @class ="wordLink" })
 
       @Html.Label("Date Hired")
-      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required", @class ="wordLink" })</h4>
+      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required", @class ="wordLink" })</h3>
 
-      <input type="submit" value="Add Engineer" class="btn" />
+      <input type="submit" value="Add Engineer" class="btn" role="button" />
     }
   </div>
 </div>
