@@ -6,18 +6,18 @@
 
 <div class="container">
   <h2>Add Engineer</h2>
+  
   <h5>@Html.ActionLink("Cancel", "Index", null, null, new {@class ="pageLink"})</h5>
-
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
 
   <div class="infoBox">
     @using (Html.BeginForm())
     {
       <h3>@Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name, new { required = "required", @class ="wordLink" })
+      @Html.TextBoxFor(model => model.Name, new {required = "required", @class ="wordLink"})
 
       @Html.Label("Date Hired")
-      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required", @class ="wordLink" })</h3>
+      @Html.TextBoxFor(model => model.DateHired, new {type = "date", required = "required", @class ="wordLink"})</h3>
 
       <input type="submit" value="Add Engineer" class="btn" role="button" />
     }

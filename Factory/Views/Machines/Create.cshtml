@@ -6,17 +6,18 @@
 
 <div class="container">
   <h2>Add Machine</h2>
-  <h5 class="pageLink">@Html.ActionLink("Show all Machines", "Index")</h5>
-  <h5 class="pageLink">@Html.ActionLink("Home", "Index", "Home")</h5>
+
+  <h5>@Html.ActionLink("Machines List", "Index", null, null, new {@class ="pageLink"})</h5>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
 
   <div class="infoBox">
     @using (Html.BeginForm())
     {
-      <h4>@Html.LabelFor(model => model.Name)
+      <h3>@Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, new { required = "required" , @class ="wordLink" })
     
       @Html.Label("Select Engineer")
-      @Html.DropDownList("EngineerId")</h4>
+      @Html.DropDownList("EngineerId")</h3>
     
       <input type="submit" value="Add Machine" class="btn" />
     }

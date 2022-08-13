@@ -12,14 +12,14 @@
   <div class="infoBox">
     @using (Html.BeginForm())
     {
-      @Html.HiddenFor(model => model.EngineerId )
+      @Html.HiddenFor(model => model.EngineerId)
 
       <p>@Html.LabelFor(model => model.Name)
-      @Html.EditorFor(model => model.Name, new { required = "required", @class ="wordLink" })</p>
+      @Html.EditorFor(model => model.Name, new {required = "required", @class ="wordLink"})</p>
 
       <p>@Html.Label("Date Hired") 
-      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })</p>
-      
+      @Html.TextBoxFor(model => model.DateHired, new {type = "date", required = "required"})</p>
+      <br />
       <input type="submit" value="Save" class ="btn" />
     }
   </div>

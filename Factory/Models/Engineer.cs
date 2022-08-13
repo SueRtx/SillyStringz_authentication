@@ -9,7 +9,6 @@ namespace Factory.Models
     {
       this.JoinEntities = new HashSet<EngineerMachine>();
     }
-
     public string Name { get; set; }
     public int EngineerId { get; set; }
     public string DateHired { get; set; }

@@ -53,7 +53,6 @@ p {
 .wordLink {
   color: #0d3f05;
   font-family:  Arial;
-  /* border: 2px solid #f5bc67;  */
   background-color: rgb(235, 179, 111);
 }
 
@@ -81,21 +80,18 @@ img {
   margin-top: 1%;
   margin-left: -1.6%;
   width: 103%;
-  /* border: 4px solid #012406; */
 }
 
 .image1 {
   float: right;
   margin-top: 1.85%;
   width: 43%;
-  /* border: 2px solid #0f0f0f; */
 }
 
 .image2 {
   float: right;
   margin-top: 1.85%;
   width: 40%;
-
 }
 
 .image3 {
@@ -118,25 +114,10 @@ img {
   margin-top: 8%;
   padding: 3% 6%;
   color: #160101;
-  /* border: 20px solid #a55d27;  */
   background-color: #ed802d;
   font-size: 20px;
   text-align: auto;
 }
-
-/* .indexBox {
-  box-sizing: content-box;  
-  width: 45%;
-  height: 273px;
-  margin-top: 8%;
-  padding: 2% 6%;
-  color: #160101;
-  border: 2px solid #0f0101; 
-  background-color: #edc43f; 
-  font-size: 20px;
-  text-align: left;
-  font-weight: bold;
-} */
 
 .indexBox {
   box-sizing: content-box;  
@@ -144,15 +125,12 @@ img {
   height: 277px;
   margin-top: 8%;
   padding: 2% 6%;
-  color: #160101;
-  /* border: 2px solid #0f0101;  */
+  color: #e9990f;
   background-color: black; 
   font-size: 20px;
   text-align: left;
   font-weight: bold;
 }
-
-
 
 .detailBox {
   box-sizing: content-box;  
@@ -167,11 +145,6 @@ img {
   font-weight: bold;
   font-family: Arial;
 }
-
-/* li {
-  margin-left: 30%;
-
-} */
 
 .pageLink {
   color:  #110101;
@@ -221,18 +194,13 @@ img {
   letter-spacing: 5px;
   background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
 }
+
 .btn3 {
   background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
   color:  #041301;
   font-weight: bold;
   margin-left: 5%;
 } 
-
-
-/* .pageLink2:hover {
-  background-color: #1a780a; 
-  color:  rgb(27, 207, 63);
-} */
 
 .pageLink2 {
   color:  #0a0b0a;
@@ -248,30 +216,5 @@ img {
   border-radius: 30%;
 }
 
-.infoBox2 {
-  box-sizing: content-box;
-  width: 94%;
-  height: 150px;
-  padding: 3%;
-  color: #160101;
-  border: 2px solid #f4ec5b; 
-  background-color: f4f09c; 
-  font-size: 20px;
-  text-align: auto;
-  font-weight: bold;
-}
-
-.detailBox2 {
-  box-sizing: content-box;  
-  width: 53%;
-  height: 250px;
-  margin-top: 1%;
-  float: right;
-  padding: 3%;
-  color: #160101;
-  font-size: 20px;
-  text-align: left;
-  font-weight: bold;
-}
 
 

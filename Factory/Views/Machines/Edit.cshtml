@@ -10,17 +10,15 @@
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
   
   <div class="infoBox">
-  @using (Html.BeginForm())
-  {
-    @Html.HiddenFor(model => model.MachineId)
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.MachineId)
 
-    <h3>Machine @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)</h3>
-
-  <br />
-    <input type="submit" value="Save" class="btn" />
-  }
-
+      <h3>Machine @Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name)</h3>
+      <br />
+      <input type="submit" value="Save" class="btn" />
+    }
   </div>
 </div>
 

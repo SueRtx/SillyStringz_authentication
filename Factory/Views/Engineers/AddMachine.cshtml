@@ -6,17 +6,18 @@
 
 <div class="container">
   <h2>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h2>
+  
   <h5>@Html.ActionLink("Back to list", "Index", null, null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
   <div class="infoBox">
     @using (Html.BeginForm())
     {
-        @Html.HiddenFor(model => model.EngineerId)
+      @Html.HiddenFor(model => model.EngineerId)
 
-        @Html.Label("Select Machine")
-        @Html.DropDownList("MachineId")
+      @Html.Label("Select Machine")
+      @Html.DropDownList("MachineId")
     <br />
-        <input type="submit" value="Save" class="btn"/>  
+      <input type="submit" value="Save" class="btn"/>  
     }
   </div>
 </div>
