@@ -16,44 +16,66 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `__efmigrationshistory`
+-- Table structure for table `__efmigrationshistory`
 --
 
-LOCK TABLES `__efmigrationshistory` WRITE;
-/*!40000 ALTER TABLE `__efmigrationshistory` DISABLE KEYS */;
-INSERT INTO `__efmigrationshistory` VALUES ('20220811183821_Initial','5.0.0');
-/*!40000 ALTER TABLE `__efmigrationshistory` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `__efmigrationshistory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `__efmigrationshistory` (
+  `MigrationId` varchar(95) NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL,
+  PRIMARY KEY (`MigrationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `engineermachine`
+-- Table structure for table `engineermachine`
 --
 
-LOCK TABLES `engineermachine` WRITE;
-/*!40000 ALTER TABLE `engineermachine` DISABLE KEYS */;
-INSERT INTO `engineermachine` VALUES (42,32,19);
-/*!40000 ALTER TABLE `engineermachine` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `engineermachine`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `engineermachine` (
+  `EngineerMachineId` int NOT NULL AUTO_INCREMENT,
+  `EngineerId` int NOT NULL,
+  `MachineId` int NOT NULL,
+  PRIMARY KEY (`EngineerMachineId`),
+  KEY `IX_EngineerMachine_EngineerId` (`EngineerId`),
+  KEY `IX_EngineerMachine_MachineId` (`MachineId`),
+  CONSTRAINT `FK_EngineerMachine_Engineers_EngineerId` FOREIGN KEY (`EngineerId`) REFERENCES `engineers` (`EngineerId`) ON DELETE CASCADE,
+  CONSTRAINT `FK_EngineerMachine_Machines_MachineId` FOREIGN KEY (`MachineId`) REFERENCES `machines` (`MachineId`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `engineers`
+-- Table structure for table `engineers`
 --
 
-LOCK TABLES `engineers` WRITE;
-/*!40000 ALTER TABLE `engineers` DISABLE KEYS */;
-INSERT INTO `engineers` VALUES (32,'kim art','2022-08-24'),(36,'john','2022-08-05');
-/*!40000 ALTER TABLE `engineers` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `engineers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `engineers` (
+  `EngineerId` int NOT NULL AUTO_INCREMENT,
+  `Name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `DateHired` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  PRIMARY KEY (`EngineerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `machines`
+-- Table structure for table `machines`
 --
 
-LOCK TABLES `machines` WRITE;
-/*!40000 ALTER TABLE `machines` DISABLE KEYS */;
-INSERT INTO `machines` VALUES (19,'box1'),(22,'kim'),(23,'kim'),(24,'kim');
-/*!40000 ALTER TABLE `machines` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `machines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `machines` (
+  `MachineId` int NOT NULL AUTO_INCREMENT,
+  `Name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  PRIMARY KEY (`MachineId`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -64,4 +86,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-12 21:39:45
+-- Dump completed on 2022-08-13 14:34:14
