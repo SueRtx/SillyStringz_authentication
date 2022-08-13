@@ -22,10 +22,10 @@ The factory manager should be able to add a list of engineers, a list of machine
 
 ## Setup/Installation Requirements
 
-* Clone repository: $ git clone https://github.com/SueRtx/DrSillyStringzFactoryProject4.Solution.git  
+* Clone repository: $ git clone https://github.com/SueRtx/SillyStringzProject4.Solution.git  
 * Open Vs Code: $ code .   
 * Open TERMINAL in Vs Code
-* Go to HairSalon directory: $ cd Factory
+* Go to Factory directory: $ cd Factory
 * Create file at root directory: $ touch "appsettings.json"
 * Add following code to "appsettings.json" (Add your own password)
 ```
