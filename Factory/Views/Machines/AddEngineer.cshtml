@@ -11,13 +11,6 @@
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
 
   <div class="infoBox">
-    @if(@Model.JoinEntities.Count == 0)
-    {
-      <h3>No Engineers Yet!</h3>
-      <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class ="btn"})</h5>
-    }
-    else
-    {
       @using (Html.BeginForm())
       {
         @Html.HiddenFor(model => model.MachineId)
@@ -27,7 +20,6 @@
         <br />
         <input type="submit" value="Save"  class ="btn"/>
       }
-    }
   </div>
 </div>
 
