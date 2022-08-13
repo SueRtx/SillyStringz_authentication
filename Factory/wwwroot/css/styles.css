@@ -20,6 +20,17 @@ h4{
   color: #4f0404;
   text-shadow: 2px 2px 2px rgb(180, 174, 174);
 }
+
+p {
+  margin: 1% 31%;
+  letter-spacing: 2px;
+  text-align: left;
+  font-size: 20px;
+  color: #160202;
+  background-color: rgb(177, 180, 181);
+  text-shadow: 1px 1px 1px rgb(101, 27, 27);
+}
+
 .wordLink {
   color: #1a780a;
   font-family:  Arial;
@@ -61,7 +72,7 @@ h4{
 
 img {
   margin-top: 1%;
-  margin-left: -3%;
+  margin-left: -3.2%;
   width: 100%;
   border: 2px solid #464545;
 }
@@ -85,7 +96,6 @@ img {
   background-color: rgb(177, 180, 181); 
   font-size: 20px;
   text-align: auto;
-  font-weight: bold;
 }
 
 .indexBox {
@@ -161,23 +171,23 @@ img {
   color: rgb(177, 180, 181);
 }
 
+.pageLink2:hover {
+  background-color: #1a780a; 
+  color:  rgb(177, 180, 181);
+}
+
 .pageLink2 {
   color:  #104d06;
   font-size: 20px;
   margin-left: 15%;
-  width: 95%;
+  width: 98%;
   border: 2px solid #4f0404;
   padding: 5px;
   text-align: center;
   font-weight: bold;
-  background-color: rgb(198, 228, 154);  ; 
+  background-color: rgb(227, 198, 126);  ; 
   font-family: Arial;
   border-radius: 30%;
-}
-
-.pageLink2:hover {
-  background-color: #f2b885; 
-  color: white;
 }
 
 .infoBox2 {

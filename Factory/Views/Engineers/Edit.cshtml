@@ -6,23 +6,21 @@
 <div class="container">
   <h2>Edit Engineer: @Html.DisplayFor(model => model.Name)</h2>
 
-  <h5 class="pageLink">@Html.ActionLink("Cancel", "Index")</h5>
-
+  <h5>@Html.ActionLink("Cancel", "Index", null, null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
 
-<div class="infoBox">
-  @using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
+  <div class="infoBox">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.EngineerId )
 
-  <p>@Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name, new { required = "required" })</p>
+      <p>@Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name, new { required = "required", @class ="wordLink" })</p>
 
-  <p>@Html.Label("Date Hired") 
-  @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })</p>
-  
-  <input type="submit" value="Save" class ="btn" />
-}
-</div>
-
+      <p>@Html.Label("Date Hired") 
+      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })</p>
+      
+      <input type="submit" value="Save" class ="btn" />
+    }
+  </div>
 </div>

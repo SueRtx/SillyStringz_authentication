@@ -3,7 +3,6 @@
 }
 
 @using Factory.Models
-
 <div class="container">
   <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Add Machine", "Create", "Machines", null, new {@class ="pageLink"})</h5>
@@ -27,8 +26,6 @@
     </div>
 
     <div class="col">
-      
-
       @if (ViewBag.Machines.Count == 0) //Machine List
       {
         <h3>No Machine yet!</h3>
