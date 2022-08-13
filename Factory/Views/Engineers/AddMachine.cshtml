@@ -5,20 +5,18 @@
 @model Factory.Models.Engineer
 
 <div class="container">
-  <h2>Add Machine</h2>
-  <hr />
-  <h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h4>
+  <h2>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h2>
+  <h5>@Html.ActionLink("Back to list", "Index", null, null, new {@class ="pageLink"})</h5>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
+  <div class="infoBox">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.EngineerId)
 
-  @using (Html.BeginForm())
-  {
-      @Html.HiddenFor(model => model.EngineerId)
-
-      @Html.Label("Select Machine")
-      @Html.DropDownList("MachineId")
-  <br />
-      <input type="submit" value="Save" class="pageLink"/>
-  }
-
-  <h5 class="pageLink">@Html.ActionLink("Back to list", "Index")</h5>
-
+        @Html.Label("Select Machine")
+        @Html.DropDownList("MachineId")
+    <br />
+        <input type="submit" value="Save" class="btn"/>  
+    }
+  </div>
 </div>

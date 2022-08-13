@@ -6,20 +6,20 @@
 
 <div class="container">
   <h2>Add Engineer</h2>
+  <h5>@Html.ActionLink("Cancel", "Index", null, null, new {@class ="pageLink"})</h5>
 
-  @using (Html.BeginForm())
-  {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name, new { required = "required" })
- 
-    @Html.LabelFor(model => model.DateHired)
-    @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required" })
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
 
-    <input type="submit" value="Add" class="btn" />
-  }
+  <div class="infoBox">
+    @using (Html.BeginForm())
+    {
+      <h4>@Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { required = "required", @class ="wordLink" })
 
-  <h5 class="pageLink">@Html.ActionLink("Engineer List", "Index")</h5>
- 
-  <h5 class="pageLink">@Html.ActionLink("Home", "Index", "Home")</h5>
+      @Html.Label("Date Hired")
+      @Html.TextBoxFor(model => model.DateHired, new { type = "date", required = "required", @class ="wordLink" })</h4>
 
+      <input type="submit" value="Add Engineer" class="btn" />
+    }
+  </div>
 </div>

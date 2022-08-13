@@ -5,30 +5,70 @@ body {
   Haettenschweiler, 'Arial Bold', sans-serif;
 }
 
-h1, h4, h6{
+h1, h2, h3, h6{
   margin-top: 1%;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-align: center;
   color: #4f0404;
-  
   text-shadow: 2px 2px 2px rgb(180, 174, 174);
 }
 
+h4{
+  margin-top: 1%;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #4f0404;
+  text-shadow: 2px 2px 2px rgb(180, 174, 174);
+}
 .wordLink {
   color: #1a780a;
   font-family:  Arial;
+  border: 2px solid #464545; 
+  background-color: rgb(177, 180, 181);
+}
+
+.linkWordColor {
+  color: #1a780a;
+  font-size: 20px;
+  font-family:  Arial;
+}
+
+.row {
+  width: 100%;
+}
+
+.image1 {
+  float: right;
+  margin-top: 2%;
+  width: 43%;
+  border: 2px solid #464545;
+}
+
+.image2 {
+  float: right;
+  margin-top: -1%;
+  margin-left: 17%;
+  width: 22%;
+  border: 2px solid #464545;
+}
+
+.image3 {
+  float: right;
+  margin-top: 6%;
+  width: 42%;
+  border: 2px solid #464545;
 }
 
 img {
   margin-top: 1%;
-  margin-left: -1.7%;
-  width: 103.5%;
+  margin-left: -3%;
+  width: 100%;
   border: 2px solid #464545;
 }
 
 .col {
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
   color: #4f0404;
   border: 2px solid #464545; 
   background-color: rgb(177, 180, 181); 
@@ -37,42 +77,44 @@ img {
   font-weight: bold;
 }
 
-
-#list {
-  width: 30%;
-  border: none;
-  margin-top: 2%;
-  margin-left: 35%;
-  letter-spacing: 3px;
-  text-align: left;
-  color: #1292ab;
-  font-weight: bold;
+.infoBox {
+  margin-top: 8%;
+  padding: 3% 10%;
+  color: #4f0404;
+  border: 2px solid #464545; 
+  background-color: rgb(177, 180, 181); 
   font-size: 20px;
-}
-
-.btn {
-  margin-right: 3%;
-  border: 2px solid #1292ab;
-  padding: 2px;
+  text-align: auto;
   font-weight: bold;
-  font-size: 15px;
-  color: rgb(246, 30, 109);
-  width: 10%;
-  background-color: rgb(216, 236, 150);  
 }
 
-.btn2 {
-  margin-left: 15%;
-  border: 2px solid #1292ab;
-  padding: 2px;
+.indexBox {
+  box-sizing: content-box;  
+  width: 45%;
+  height: 273px;
+  margin-top: 8%;
+  padding: 2% 6%;
+  color: #4f0404;
+  border: 2px solid #464545; 
+  background-color: rgb(148, 151, 151); 
+  font-size: 20px;
+  text-align: left;
   font-weight: bold;
-  font-size: 15px;
-  color: rgb(246, 30, 109);
-  
-  width: 10%;
-  background-color: rgb(216, 236, 150);  
 }
 
+.detailBox {
+  box-sizing: content-box;  
+  width: 47%;
+  height: 291px;
+  margin-top: 8%;
+  padding: 2% 5%;
+  color: #4f0404;
+  border: 2px solid #464545; 
+  background-color: rgb(148, 151, 151); 
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
 
 .pageLink {
   color:  #1a780a;
@@ -85,25 +127,84 @@ img {
   margin-top: 1%;
   text-align: center;
   font-weight: bold;
-  background-color: rgb(177, 180, 181); 
+  background-color: rgb(198, 228, 154);
   font-family: Arial;
   border-radius: 30%;
 }
 
+.btn {
+  border: 2px solid #1a780a;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 25px;
+  color:  #1a780a;
+  width: 30%;
+  letter-spacing: 5px;
+  background-color: rgb(198, 228, 154);  
+}
 
+.btn2 {
+  float: left;
+  margin-left: 10%;
+  border: 2px solid #1a780a;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 25px;
+  color:  #1a780a;
+  width: 30%;
+  letter-spacing: 5px;
+  background-color: rgb(198, 228, 154);  
+}
 
 .pageLink:hover {
   background-color:#1a780a; 
   color: rgb(177, 180, 181);
 }
 
-
+.pageLink2 {
+  color:  #104d06;
+  font-size: 20px;
+  margin-left: 15%;
+  width: 95%;
+  border: 2px solid #4f0404;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(198, 228, 154);  ; 
+  font-family: Arial;
+  border-radius: 30%;
+}
 
 .pageLink2:hover {
   background-color: #f2b885; 
   color: white;
 }
 
+.infoBox2 {
+  box-sizing: content-box;
+  width: 94%;
+  height: 150px;
+  padding: 3%;
+  color: #4f0404;
+  border: 2px solid #464545; 
+  background-color: rgb(177, 180, 181); 
+  font-size: 20px;
+  text-align: auto;
+  font-weight: bold;
+}
+
+.detailBox2 {
+  box-sizing: content-box;  
+  width: 53%;
+  height: 250px;
+  margin-top: 1%;
+  float: right;
+  padding: 3%;
+  color: #4f0404;
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
 
 
 

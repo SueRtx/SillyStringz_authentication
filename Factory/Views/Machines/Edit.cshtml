@@ -3,23 +3,24 @@
 }
 
 @model Factory.Models.Machine
-
 <div class="container">
-  <h2>Edit Machine</h2>
-  <hr>
-  <h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
+  <h2>Edit this task: @Html.DisplayFor(model => model.Name)</h2>
 
+  <h5>@Html.ActionLink("Cancel", "Index", null, null, new {@class ="pageLink"})</h5>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
+  
+  <div class="infoBox">
   @using (Html.BeginForm())
   {
     @Html.HiddenFor(model => model.MachineId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    <h3>Machine @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)</h3>
 
   <br />
-    <input type="submit" value="Save" class="pageLink" />
+    <input type="submit" value="Save" class="btn" />
   }
 
-  <h5 class="pageLink">@Html.ActionLink("Cancel", "Index")</h5>
+  </div>
 </div>
 

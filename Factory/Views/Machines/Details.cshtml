@@ -3,22 +3,30 @@
 }
 
 @model Factory.Models.Machine
+
 <div class="container">
-
   <h2>Machine Details</h2>
-  <hr />
-  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-  <h5 class="pageLink">@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</h5>
-<h5 class="pageLink2">@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</h5>
-<br/>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
+
+  <h5>@Html.ActionLink("Machine List", "Index", null, null, new {@class ="pageLink"})</h5>
+
+  <div class="infoBox">
+  <h3> Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+  <h5>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId }, new {@class ="pageLink"})</h5>
+<h5>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId}, new {@class ="pageLink"})</h5>
+</div>
+
+<img class="image3" src="~/image/machine3.png"  class="image1" >
+<div class="detailBox">
+  <h5>@Html.ActionLink("Add Engineer for this Machine", "AddEngineer", new { id = Model.MachineId }, new {@class ="pageLink2"})</h5> 
   @if(@Model.JoinEntities.Count == 0)
   {
-    <p>This Machine does not belong to any Engineers</p>
+    <h3>Machine Does Not Belong to Any Engineers</h3>
   }
   else
   {
-    <hr />
     <h4> Engineers List for <strong>@Html.DisplayFor(model => model.Name)</strong></h4>
 
     @foreach(var join in Model.JoinEntities)
@@ -33,14 +41,10 @@
     }
     
   }
-  <hr />
-  <h5 class="pageLink2">
-  @Html.ActionLink("Add more Engineer for this Machine", "AddEngineer", new { id = Model.MachineId })</h5> 
 
+  <h5>
   
-  <h5 class="pageLink2">@Html.ActionLink("Machine List", "Index")</h5> 
+</div> 
 </div>
-
-
 
 

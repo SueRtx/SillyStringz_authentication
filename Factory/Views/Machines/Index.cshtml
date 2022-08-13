@@ -6,21 +6,23 @@
 @model List<Factory.Models.Machine>;
 
 <div class="container">
-<h1>Machines</h1>
+  <h2>Machines</h2>
+  <h5>@Html.ActionLink("Add new Machine", "Create", null, null, new {@class ="pageLink"})</h5>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
+  <img class="image1" src="~/image/machine1.png"  class="image1" >
 
+  <div class="indexBox">
   @if (@Model.Count == 0)
-  {
-    <h3>No Machines have been added yet!</h3>
-  } 
-  else
-  {
-    <h4>* Click on Machine to See Details *</h4>
-    @foreach (Machine machine in Model)
     {
-      <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId }, new { @class="linkWordColor" })</li>
+      <h3>No Machines have been added yet!</h3>
+    } 
+    else
+    {
+      <h4>* Click on Machine to See Details *</h4>
+      @foreach (Machine machine in Model)
+      {
+        <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId }, new { @class="linkWordColor" })</li>
+      }
     }
-  }
-
-  <h5 class="pageLink">@Html.ActionLink("Add new Machine", "Create")</h5>
-  <h5 class="pageLink">@Html.ActionLink("Home", "Index", "Home")</h5>
+  </div> 
 </div>

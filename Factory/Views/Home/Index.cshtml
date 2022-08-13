@@ -17,11 +17,11 @@
       }
       else
       {
-        <h4>Engineers List</h4>
+        <h3>Engineers List</h3>
         <h6>*Click on Engineer to See Details* </h6>
         @foreach (Engineer engineer in @ViewBag.Engineers)
         {
-          <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@class ="wordLink"})</li>
+          <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@class ="linkWordColor"})</li>
         }
       }
     </div>
@@ -31,15 +31,15 @@
 
       @if (ViewBag.Machines.Count == 0) //Machine List
       {
-        <h4>No Machine yet!</h4>
+        <h3>No Machine yet!</h3>
       }
       else
       {
-        <h4>Machine List</h4>
+        <h3>Machine List</h3>
         <h6>*Click on Machine to See Details* </h6>
         @foreach (Machine machine in ViewBag.Machines)
         {
-          <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId }, new {@class ="wordLink"})</li>
+          <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId }, new {@class ="linkWordColor"})</li>
         }
       }
     </div>
