@@ -9,6 +9,7 @@
   
   <h5>@Html.ActionLink("Back to list", "Index", null, null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
+
   <div class="infoBox">
     @using (Html.BeginForm())
     {
@@ -16,7 +17,7 @@
 
       @Html.Label("Select Machine")
       @Html.DropDownList("MachineId")
-    <br />
+      <br />
       <input type="submit" value="Save" class="btn"/>  
     }
   </div>

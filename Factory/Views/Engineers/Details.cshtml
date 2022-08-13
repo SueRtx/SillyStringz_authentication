@@ -9,20 +9,19 @@
 
   <h5>@Html.ActionLink("Home", "Index", "Home",null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Engineer List", "Index", null, null, new {@class ="pageLink"})</h5>
+  <h5>@Html.ActionLink("Edit Engineer", "Edit", new {id = Model.EngineerId}, new {@class ="pageLink"})</h5>
+    <h5>@Html.ActionLink("Delete Engineer", "Delete", new {id = Model.EngineerId}, new {@class ="pageLink"})</h5>
 
   <div class="infoBox">
     <h3>@Html.Label("Engineer Name"): @Html.DisplayFor(model => model.Name)*
 
     @Html.Label("Date Hired"): @Html.DisplayFor(model => model.DateHired)</h3>
-
-    <h5>@Html.ActionLink("Edit Engineer", "Edit", new {id = Model.EngineerId}, new {@class ="pageLink"})</h5>
-    <h5>@Html.ActionLink("Delete Engineer", "Delete", new {id = Model.EngineerId}, new {@class ="pageLink"})</h5>
+    <h5>@Html.ActionLink("Add machine for this Engineer", "AddMachine", new {id = Model.EngineerId}, new {@class ="pageLink2"})</h5> 
   </div>
 
   <img class="image2" src="~/image/machine2.png">
 
   <div class="detailBox">
-    <h5>@Html.ActionLink("Add machine for this Engineer", "AddMachine", new {id = Model.EngineerId}, new {@class ="pageLink2"})</h5> 
     @if(@Model.JoinEntities.Count == 0)
     {
       <h4>Engineer Does Not Contain Any Machine!</h4>

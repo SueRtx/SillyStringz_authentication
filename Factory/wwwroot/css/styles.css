@@ -15,15 +15,15 @@ body {
   text-shadow: 2px 2px 2px #54c10b;
 }
 
-h2, h3{
-  margin-top: 1%;
+h3{
+  margin-top: 10%;
   letter-spacing: 2px;
   text-align: center;
-  color: #0a0000;
-  text-shadow: 2px 2px 2px #54c10b;
+  color: #810909;
+  text-shadow: 2px 2px 2px #14e240;
 }
 
-h6{
+h6, h2{
   margin-top: 1%;
   letter-spacing: 2px;
   text-align: center;
@@ -90,7 +90,8 @@ img {
 
 .image2 {
   float: right;
-  margin-top: 1.85%;
+  /* margin-top: 1.85%; */
+  margin-top: -5.2%;
   width: 40%;
 }
 
@@ -110,11 +111,19 @@ img {
   font-weight: bold;
 }
 
-.infoBox {
+/* .infoBox {
   margin-top: 8%;
   padding: 3% 6%;
   color: #160101;
   background-color: #ed802d;
+  font-size: 20px;
+  text-align: auto;
+} */
+.infoBox {
+  /* margin-top: 2%; */
+  padding: 3% 6%;
+ 
+ border: solid #160101;
   font-size: 20px;
   text-align: auto;
 }
@@ -135,8 +144,8 @@ img {
 .detailBox {
   box-sizing: content-box;  
   width: 50%;
-  height: 273px;
-  margin-top: 4%;
+  height: 271px;
+  margin-top: -5%;
   padding: 2% 5%;
   color: #e9990f;
   background-color:black; 
@@ -204,13 +213,15 @@ img {
 
 .pageLink2 {
   color:  #0a0b0a;
+  margin-top:-5%;
   font-size: 20px;
-  margin-left: 17%;
+  /* margin-left: 2%; */
   padding: 8px;
+
   text-align: center;
   font-weight: bold;
   font-family: Arial;
-  border: 2px solid #df5e1d;
+  border: 2px solid #0b0400;
   background-color: #f4f09c;
   background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
   border-radius: 30%;
