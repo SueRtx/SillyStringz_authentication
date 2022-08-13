@@ -9,16 +9,24 @@
   
   <h5>@Html.ActionLink("Machine List", "Index", null, null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
-  
+
   <div class="infoBox">
-    @using (Html.BeginForm())
+    @if(@Model.JoinEntities.Count == 0)
     {
+      <h3>No Engineers Yet!</h3>
+      <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class ="btn"})</h5>
+    }
+    else
+    {
+      @using (Html.BeginForm())
+      {
         @Html.HiddenFor(model => model.MachineId)
 
         @Html.Label("Select Engineer ")
         @Html.DropDownList("EngineerId")
-    <br />
+        <br />
         <input type="submit" value="Save"  class ="btn"/>
+      }
     }
   </div>
 </div>

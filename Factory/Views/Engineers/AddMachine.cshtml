@@ -10,6 +10,13 @@
   <h5>@Html.ActionLink("Back to list", "Index", null, null, new {@class ="pageLink"})</h5>
   <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class ="pageLink"})</h5>
   <div class="infoBox">
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <h3>No Machine Yet!</h3>
+      <h5>@Html.ActionLink("Add Machine", "Create", "Machines", null, new {@class ="btn"})</h5>
+    }
+    else
+    {
     @using (Html.BeginForm())
     {
       @Html.HiddenFor(model => model.EngineerId)
@@ -18,6 +25,7 @@
       @Html.DropDownList("MachineId")
     <br />
       <input type="submit" value="Save" class="btn"/>  
+    }
     }
   </div>
 </div>
