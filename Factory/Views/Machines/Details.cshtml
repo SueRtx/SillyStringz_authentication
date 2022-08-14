@@ -15,7 +15,16 @@
   <div class="infoBox">
     <h3> Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-    <h5>@Html.ActionLink("Add Engineer for this Machine", "AddEngineer", new { id = Model.MachineId }, new {@class ="pageLink2"})</h5>  
+
+    @if (ViewBag.Engineers.Count == 0)
+    {
+      <h4>No Engineer to Add yet!</h4>
+      <h5>@Html.ActionLink("Add Engineers to Factory", "Create", "Engineers", null, new {@class ="pageLink2"})</h5>
+    }
+    else
+    {
+    <h5>@Html.ActionLink("Add Engineer for this Machine", "AddEngineer", new { id = Model.MachineId }, new {@class ="pageLink2"})</h5> 
+    } 
   </div>
 
   <img class="image2" src="~/image/machine2.png">
@@ -23,7 +32,7 @@
   <div class="detailBox">
     @if(@Model.JoinEntities.Count == 0)
     {
-      <h4>No Engineer yet!</h4>
+      <h4>No Licenced Engineer for this Macine!</h4>
     }
     else
     {

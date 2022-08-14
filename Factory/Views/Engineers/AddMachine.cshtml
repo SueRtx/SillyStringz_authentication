@@ -13,10 +13,10 @@
   <div class="infoBox">
     @using (Html.BeginForm())
     {
-      @Html.HiddenFor(model => model.EngineerId)
+      <h3>@Html.HiddenFor(model => model.EngineerId)
 
       @Html.Label("Select Machine")
-      @Html.DropDownList("MachineId")
+      @Html.DropDownList("MachineId")</h3>
       <br />
       <input type="submit" value="Save" class="btn"/>  
     }

@@ -16,7 +16,16 @@
     <h3>@Html.Label("Engineer Name"): @Html.DisplayFor(model => model.Name)*
 
     @Html.Label("Date Hired"): @Html.DisplayFor(model => model.DateHired)</h3>
+
+    @if (ViewBag.Machines.Count == 0) 
+    {
+      <h4>No Machine to Add yet!</h4>
+      <h5>@Html.ActionLink("Add Machines to Factory", "Create", "Machines", null, new {@class ="pageLink2"})</h5>
+    }
+    else
+    {
     <h5>@Html.ActionLink("Add machine for this Engineer", "AddMachine", new {id = Model.EngineerId}, new {@class ="pageLink2"})</h5> 
+    }
   </div>
 
   <img class="image2" src="~/image/machine2.png">

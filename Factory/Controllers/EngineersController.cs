@@ -37,6 +37,7 @@ namespace Factory.Controllers
 
     public ActionResult Details(int id)
     {
+      ViewBag.Machines = _db.Machines.ToList();
       var thisEngineer = _db.Engineers
           .Include(engineer => engineer.JoinEntities)
           .ThenInclude(join => join.Machine)
