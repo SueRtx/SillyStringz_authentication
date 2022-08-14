@@ -6,38 +6,37 @@
 
 <div class = "container">
   <h2>Machine Details</h2>
-
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })</h5>
-  <h5>@Html.ActionLink("Machine List", "Index", null, null, new { @class = "pageLink" })</h5>
-
-  <h5>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId }, new { @class ="pageLink" })</h5>
-  <h5>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId}, new { @class = "pageLink" })</h5>
-
+  
   <div class = "infoBox">
-    <h3> Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
+  @Html.ActionLink("Machine List", "Index", null, null, new { @class = "pageLink" })
 
+  @Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId }, new { @class ="pageLink" })
+  @Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId}, new { @class = "pageLink" })
+
+  <h3> Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
     @if (ViewBag.Engineers.Count == 0)
     {
       <h4>No Engineer to Add Yet!</h4>
-      <h5>@Html.ActionLink("Add Engineers to Factory", "Create", "Engineers", null, new { @class = "pageLink2" })</h5>
+      @Html.ActionLink("Add Engineers to Factory", "Create", "Engineers", null, new { @class = "pageLink2" })
     }
     else
     {
-    <h5>@Html.ActionLink("Add Engineer for This Machine", "AddEngineer", new { id = Model.MachineId }, new { @class = "pageLink2" })</h5> 
+    @Html.ActionLink("Add Engineer for This Machine", "AddEngineer", new { id = Model.MachineId }, new { @class = "pageLink2" }) 
     } 
   </div>
 
-  <img class = "image2" src = "~/image/machine2.png">
-
   <div class = "detailBox">
+    <img class = "image1" src = "~/image/machine2.png">
+
     @if(@Model.JoinEntities.Count == 0)
     {
-      <h4>No Licenced Engineer for This Machine!</h4>
+      <h5>No Licenced Engineer for This Machine!</h5>
     }
     else
     {
-      <h4>Engineers List for <strong>@Html.DisplayFor(model => model.Name)</strong></h4>
+      <h5>Engineers List for <strong>@Html.DisplayFor(model => model.Name)</strong></h5>
     <ul>
     @foreach(var join in Model.JoinEntities)
     {

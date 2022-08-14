@@ -7,17 +7,14 @@
 <div class = "container">
   <h2>Add Machine</h2>
 
-  <h5>@Html.ActionLink("Machines List", "Index", null, null, new { @class = "pageLink" })</h5>
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })</h5>
-
   <div class = "infoBox">
     @using (Html.BeginForm())
     {
       <h3>@Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name, new { required="required" , @class ="wordLink"})
-    
-      </h3>
-      <input type = "submit" value = "Add Machine" class = "btn" />
+      @Html.TextBoxFor(model => model.Name, new { required = "required" , @class = "wordLink"})</h3>
+      <br />
+      <input type = "submit" value = "Add Machine" class = "btn2" />
     }
+    @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
   </div>
 </div>

@@ -6,38 +6,39 @@
 
 <div class = "container">
   <h2>Engineer Details</h2>
-
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })</h5>
-  <h5>@Html.ActionLink("Engineer List", "Index", null, null, new { @class = "pageLink" })</h5>
-  <h5>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId }, new { @class = "pageLink" })</h5>
-    <h5>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId }, new { @class = "pageLink" })</h5>
-
+  
   <div class = "infoBox">
-    <h3>@Html.Label("Engineer Name"): @Html.DisplayFor(model => model.Name)*
+    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
+    @Html.ActionLink("Engineer List", "Index", null, null, new { @class = "pageLink" })
+    
+    @Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId }, new { @class = "pageLink" })
+    @Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId }, new { @class = "pageLink" })
 
-    @Html.Label("Date Hired"): @Html.DisplayFor(model => model.DateHired)</h3>
+    <h4>@Html.Label("Engineer Name"): @Html.DisplayFor(model => model.Name)*
+    <br />
+    @Html.Label("Date Hired"): @Html.DisplayFor(model => model.DateHired)</h4>
 
     @if (ViewBag.Machines.Count == 0) 
     {
-      <h4>No Machine to Add Yet!</h4>
-      <h5>@Html.ActionLink("Add Machines to Factory", "Create", "Machines", null, new { @class = "pageLink2" })</h5>
+      <h3>No Machine to Add Yet!</h3>
+      @Html.ActionLink("Add Machines to Factory", "Create", "Machines", null, new { @class = "pageLink2" })
     }
     else
     {
-    <h5>@Html.ActionLink("Add machine to Engineer", "AddMachine", new { id = Model.EngineerId }, new {@class = "pageLink2"})</h5> 
+    @Html.ActionLink("Add machine to Engineer", "AddMachine", new { id = Model.EngineerId }, new {@class = "pageLink2"})
     }
   </div>
 
-  <img class = "image2" src = "~/image/machine2.png">
-
   <div class = "detailBox">
+    <img class = "image2" src = "~/image/machine2.png">
+
     @if(@Model.JoinEntities.Count == 0)
     {
-      <h4>Engineer Does Not Contain Any Machine!</h4>
+      <h5>Engineer Does Not Contain Any Machine!</h5>
     }
     else
     {
-      <h4>Machines this Engineer  Licensed to Repair</h4>
+      <h5>Machines this Engineer  Licensed to Repair</h5>
       <ul>
       @foreach(var join in Model.JoinEntities)
       {

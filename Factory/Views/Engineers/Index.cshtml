@@ -7,19 +7,19 @@
 <div class = "container">
   <h2>Engineer List</h2>
 
-  <h5>@Html.ActionLink("Add Engineer", "Create", null, null, new { @class = "pageLink" })</h5>
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })</h5>
+  @Html.ActionLink("Add Engineer", "Create", null, null, new { @class = "pageLink" })
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
   
-  <img class = "image1" src = "~/image/machine1.png" >
-
   <div class = "indexBox">
+    <img class = "image1" src = "~/image/machine3.png" >
+
     @if (@Model.Count == 0)
     {
       <h4>Engineer List is EMPTY!</h4>
     } 
     else
     {
-      <h4>Click on Engineer to See Details</h4>
+      <h6>Click on Engineer to See Details</h6>
       @foreach(Engineer engineer in Model)
       {
         <li>@Html.ActionLink($"{ engineer.Name }", "Details", new { id = engineer.EngineerId }, new { @class = "linkWordColor" }) 

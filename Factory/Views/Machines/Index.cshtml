@@ -8,19 +8,19 @@
 <div class = "container">
   <h2>Machines</h2>
   
-  <h5>@Html.ActionLink("Add new Machine", "Create", null, null, new { @class ="pageLink" })</h5>
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink" })</h5>
-
-  <img class = "image1" src = "~/image/machine1.png">
+  @Html.ActionLink("Add new Machine", "Create", null, null, new { @class ="pageLink" })
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink" })
 
   <div class = "indexBox">
+    <img class = "image1" src = "~/image/machine3.png">
+
     @if (@Model.Count == 0)
       {
         <h4>No Machines Yet!</h4>
       } 
       else
       {
-      <h4>Click on Machine to See Details</h4>
+      <h5>Click on Machine to See Details</h5>
       @foreach (Machine machine in Model)
       {
         <li>@Html.ActionLink($"{ machine.Name }", "Details", new { id = machine.MachineId }, new { @class ="linkWordColor" })</li>
