@@ -4,16 +4,17 @@
 
 @using Factory.Models
 
-<div class="container">
-  <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new {@class ="pageLink"})</h5>
-  <h5>@Html.ActionLink("Add Machine", "Create", "Machines", null, new {@class ="pageLink"})</h5>
-  <img src="~/image/machine.jpg">
+<div class = "container">
+  <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers", null, new { @class = "pageLink" })</h5>
+  <h5>@Html.ActionLink("Add Machine", "Create", "Machines", null, new { @class = "pageLink" })</h5>
 
-  <div class="row">
-    <div class="col">
+  <img src = "~/image/machine.jpg">
+
+  <div class = "row">
+    <div class = "col">
       @if (ViewBag.Engineers.Count == 0)
       {
-        <h3>No Engineer yet!</h3>
+        <h3>No Engineer Yet!</h3>
       }
       else
       {
@@ -21,14 +22,14 @@
         <h6>*Click on Engineer to See Details* </h6>
         @foreach (Engineer engineer in @ViewBag.Engineers)
         {
-          <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new {id = engineer.EngineerId}, new {@class ="linkWordColor"})</li>
+          <li>@Html.ActionLink($"{ engineer.Name }", "Details", "Engineers", new { id = engineer.EngineerId }, new { @class = "linkWordColor" })</li>
         }
       }
     </div>
-    <div class="col">
+    <div class = "col">
       @if (ViewBag.Machines.Count == 0) 
       {
-        <h3>No Machine yet!</h3>
+        <h3>No Machine Yet!</h3>
       }
       else
       {
@@ -36,7 +37,7 @@
         <h6>*Click on Machine to See Details* </h6>
         @foreach (Machine machine in ViewBag.Machines)
         {
-          <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new {id = machine.MachineId}, new {@class ="linkWordColor"})</li>
+          <li>@Html.ActionLink($"{ machine.Name }", "Details", "Machines", new { id = machine.MachineId }, new { @class = "linkWordColor" })</li>
         }
       }
     </div>

@@ -42,16 +42,6 @@ h4{
   text-shadow: 2px 2px 2px #8af467;
 }
 
-p {
-  margin: 1% 31%;
-  letter-spacing: 2px;
-  text-align: left;
-  font-size: 20px;
-  color: #160202;
-  background-color: #f4f09c;
-  text-shadow: 1px 1px 1px rgb(58, 240, 34);
-}
-
 .wordLink {
   color: #0d3f05;
   font-family:  Arial;
@@ -113,6 +103,7 @@ img {
 }
 
 .infoBox {
+  margin-top: -.9%;
   padding: 3% 6%;
   background-color: rgb(231, 187, 93);
   border: 25px solid #d56d0c;

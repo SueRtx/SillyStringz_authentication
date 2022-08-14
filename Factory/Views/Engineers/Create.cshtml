@@ -4,22 +4,22 @@
 
 @model Factory.Models.Engineer
 
-<div class="container">
+<div class = "container">
   <h2>Add Engineer</h2>
   
-  <h5>@Html.ActionLink("Cancel", "Index", null, null, new {@class="pageLink"})</h5>
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new {@class="pageLink"})</h5>
+  <h5>@Html.ActionLink("Cancel", "Index", null, null, new { @class = "pageLink" })</h5>
+  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })</h5>
 
-  <div class="infoBox">
+  <div class = "infoBox">
     @using (Html.BeginForm())
     {
-      <h2>@Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name, new {@class="wordLink", required="required"})
-<br>
+      <h3>@Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { @class = "wordLink", required = "required" })
+      <br>
       @Html.Label("Date Hired")
-      @Html.TextBoxFor(model => model.DateHired, new {@class="wordLink", type="date", required="required", })</h2>
+      @Html.TextBoxFor(model => model.DateHired, new { @class = "wordLink", type = "date", required = "required" })</h3>
 
-      <input type="submit" value="Add Engineer" class="btn" role="button" />
+      <input type = "submit" value = "Add Engineer" class = "btn" />
     }
   </div>
 </div>
