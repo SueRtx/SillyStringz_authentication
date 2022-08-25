@@ -23,19 +23,6 @@
 
   <img src = "~/image/machine.jpg">
 
-  @* @if (User.Identity.IsAuthenticated)
-  {
-  <h2>Welcome @User.Identity.Name !</h2>
-  @using (Html.BeginForm("LogOff", "Account"))
-    {
-      <input type="submit" class="btn btn-primary" value="Log Out"/>
-    }
-  }
-  else
-  {
-    <h5>@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
-  } *@
-
   <div class = "row">
     <div class = "col">
       @if (ViewBag.Engineers.Count == 0)
