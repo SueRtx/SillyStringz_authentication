@@ -4,21 +4,32 @@ using Microsoft.AspNetCore.Mvc;
 using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Factory.Controllers
 {
+  [Authorize]
   public class MachinesController : Controller
   {
     private readonly FactoryContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public MachinesController(FactoryContext db)
+    public MachinesController(UserManager<ApplicationUser> userManager, FactoryContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      return View(_db.Machines.ToList());
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var userMachines = _db.Machines.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      return View(userMachines);
+      // return View(_db.Machines.ToList());
     }
 
     public ActionResult Create()
@@ -28,10 +39,19 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Machine machine)
+    public async Task<ActionResult> Create(Machine machine)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      machine.User = currentUser;
       _db.Machines.Add(machine);
       _db.SaveChanges();
+
+    //   if (EngineerId != 0)
+    // {
+    //     _db.EngineerRecipe.Add(new EngineerRecipe() { EngineerId = EngineerId, RecipeId = recipe.RecipeId });
+    // }
+    // _db.SaveChanges();
       return RedirectToAction("Index");
     }
 

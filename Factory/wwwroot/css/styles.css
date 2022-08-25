@@ -198,6 +198,7 @@ img {
 .pageLink2 {
   color:  #cc2910;
   margin-top:-5%;
+  width: 30%;
   font-size: 20px;
   padding: 8px;
   text-align: center;
@@ -206,6 +207,22 @@ img {
   border: 2px solid #f4edea;
   background-color: #f4f09c;
   background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
+  border-radius: 30%;
+}
+
+.pageLink3 {
+  color:  #110101;
+  background-image: linear-gradient(45deg, #68e117,#b1df92, #65e40f );
+  font-size: 20px;
+  float: left;
+  margin-left: 40%;
+  width: 20%;
+  border: 3px solid #012406;
+  padding: 3px;
+  margin-top: 1%;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
   border-radius: 30%;
 }
 

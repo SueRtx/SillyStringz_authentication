@@ -5,10 +5,36 @@
 @using Factory.Models
 
 <div class = "container">
+  @if (User.Identity.IsAuthenticated)
+  {
+  <h2>Welcome @User.Identity.Name !</h2>
+  @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn btn-primary" value="Log Out"/>
+    }
+  }
+  else
+  {
+    <h5 class = "linkWordColor">@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
+  }
+
   @Html.ActionLink("Add Engineer", "Create", "Engineers", null, new { @class = "pageLink" })
   @Html.ActionLink("Add Machine", "Create", "Machines", null, new { @class = "pageLink" })
 
   <img src = "~/image/machine.jpg">
+
+  @* @if (User.Identity.IsAuthenticated)
+  {
+  <h2>Welcome @User.Identity.Name !</h2>
+  @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn btn-primary" value="Log Out"/>
+    }
+  }
+  else
+  {
+    <h5>@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
+  } *@
 
   <div class = "row">
     <div class = "col">

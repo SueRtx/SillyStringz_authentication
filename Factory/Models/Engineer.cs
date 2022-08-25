@@ -13,6 +13,7 @@ namespace Factory.Models
     public int EngineerId { get; set; }
     public string DateHired { get; set; }
 
-    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }    
+    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+    public virtual ApplicationUser User { get; set; }  
   }
 }

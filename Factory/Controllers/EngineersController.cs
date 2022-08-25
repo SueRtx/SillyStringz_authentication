@@ -1,25 +1,34 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Factory.Controllers
 {
+  [Authorize]
   public class EngineersController : Controller
   {
     private readonly FactoryContext _db;
-
-    public EngineersController(FactoryContext db)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public EngineersController(UserManager<ApplicationUser> userManager, FactoryContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      List<Engineer> model = _db.Engineers.ToList();
-      return View(model);
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var userEngineers = _db.Engineers.Where(entry => entry.User.Id == currentUser.Id).ToList();
+
+      return View(userEngineers);
     }
 
     public ActionResult Create()
@@ -27,9 +36,13 @@ namespace Factory.Controllers
       return View();
     }
 
+
     [HttpPost]
-    public ActionResult Create(Engineer engineer)
+    public async Task<ActionResult> Create(Engineer engineer)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      engineer.User = currentUser;
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
