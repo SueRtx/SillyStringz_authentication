@@ -1,8 +1,8 @@
-# Dr. Sillystringz Factory (C# Project 4)
+# Dr. Sillystringz Factory Authentication
 
 #### By Sue Roberts
 
-####  MVC web application to manage their engineers and the machines they are licensed to fix. 
+####  MVC web application to manage their engineers and the machines they are licensed to fix with user authentication. 
 
 ## Technologies Used
 
@@ -15,10 +15,15 @@
 * CSS
 * Bootstrap
 * HTML
+* Identity 
+* Razor
 
 ## Description
 
-The factory manager should be able to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines. There are  many-to-many relationships between Engineers and Machines. An engineer can be licensed to repair many machines and a machine can have many engineers licensed to repair it. 
+The application has user authentication. Users are able to login and logout. Only login users could create, update and delete. All users are able to read without login. The login users coould add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines. There are many-to-many relationships between Engineers and Machines. An engineer can be licensed to repair many machines and a machine can have many engineers licensed to repair it. 
+
+## Home View
+![Home Index View](Factory/wwwroot/image/Factory.png "Home index view")
 
 ## Setup/Installation Requirements
 
